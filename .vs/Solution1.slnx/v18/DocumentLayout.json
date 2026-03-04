@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\User\\OneDrive\\Desktop\\ShiftCore\\Solution1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{74E82937-0D50-4EF7-92F1-B3310732A335}|ShiftCore\\ShiftCore.csproj|c:\\users\\user\\onedrive\\desktop\\shiftcore\\solution1\\shiftcore\\controllers\\workercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{74E82937-0D50-4EF7-92F1-B3310732A335}|ShiftCore\\ShiftCore.csproj|solutionrelative:shiftcore\\controllers\\workercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "WorkerController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\OneDrive\\Desktop\\ShiftCore\\Solution1\\ShiftCore\\Controllers\\WorkerController.cs",
+              "RelativeDocumentMoniker": "ShiftCore\\Controllers\\WorkerController.cs",
+              "ToolTip": "C:\\Users\\User\\OneDrive\\Desktop\\ShiftCore\\Solution1\\ShiftCore\\Controllers\\WorkerController.cs",
+              "RelativeToolTip": "ShiftCore\\Controllers\\WorkerController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-04T17:53:38.27Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
