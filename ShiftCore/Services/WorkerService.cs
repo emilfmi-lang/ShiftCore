@@ -9,7 +9,7 @@ public class WorkerService
     public WorkerService()
     {
         _filePath = Path.Combine(Directory.GetCurrentDirectory(), "Data", "workers.json");
-        if(!File.Exists(_filePath))
+        if (!File.Exists(_filePath))
         {
             File.WriteAllText(_filePath, "[]");
         }
@@ -28,9 +28,12 @@ public class WorkerService
     {
         return ReadWorkers();
     }
-    public Worker AddWorker(string fullName,  string role)
+    public Worker AddWorker(string fullName, string role)
     {
+
         var workers = ReadWorkers();
+        if (workers.Any(x => x.FullName.ToLower() == fullName.ToLower()))
+            throw new Exception("Worker already exists.");
         var worker = new Worker
         {
             FullName = fullName,
@@ -39,5 +42,23 @@ public class WorkerService
         workers.Add(worker);
         SaveWorkers(workers);
         return worker;
+    }
+    public List<Worker> GetAllActiveWorkers() =>
+                        ReadWorkers().Where(x => x.IsActive).ToList();
+    public bool DeactivateWorker(Guid id)
+    {
+        var workers = ReadWorkers();
+        var worker = workers.FirstOrDefault(x => x.Id == id);
+        if (worker == null)
+            return false;
+        worker.IsActive = false;
+        SaveWorkers(workers);
+        return true;
+    }
+
+    public Worker? GetWorkerById(Guid id)
+    {
+        var workers = ReadWorkers();
+        return workers.FirstOrDefault(x => x.Id == id);
     }
 }
