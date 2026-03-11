@@ -61,4 +61,9 @@ public class WorkerService
         var workers = ReadWorkers();
         return workers.FirstOrDefault(x => x.Id == id);
     }
+    public List<Worker> DateWorker(DateTime startDate , DateTime endDate)
+    {
+        List<Worker> workers = ReadWorkers();
+        return workers.Where(x => x.CreatedAt >= startDate && x.CreatedAt <= endDate).ToList();
+    }
 }
