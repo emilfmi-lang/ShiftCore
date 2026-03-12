@@ -22,4 +22,13 @@ public class AttendanceService
         return JsonSerializer.Deserialize<List<AttendanceRecord>>(json)
             ?? new List<AttendanceRecord>();
     }
+    private void SaveAttendance(List<AttendanceRecord> records)
+    {
+        var path = GetFilePath();
+        var json = JsonSerializer.Serialize(records, new JsonSerializerOptions
+        {
+            WriteIndented = true
+        });
+        File.WriteAllText(path, json);
+    }
 }
