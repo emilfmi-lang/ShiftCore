@@ -13,24 +13,14 @@ public class WorkerService
         _storage = storage;
         _filePath = Path.Combine(Directory.GetCurrentDirectory(), "Data", "workers.json");
     }
-    private List<Worker> ReadWorkers()  
-    {
-        var json = File.ReadAllText(_filePath);
-        return JsonSerializer.Deserialize<List<Worker>>(json) ?? new List<Worker>();
-    }
-    private void SaveWorkers(List<Worker> workers)
-    {
-        var json = JsonSerializer.Serialize(workers, new JsonSerializerOptions { WriteIndented = true });
-        File.WriteAllText(_filePath, json);
-    }
     public List<Worker> GetAllWorkers()
     {
-        return ReadWorkers();
+        return _storage.Read<Worker>(_filePath);
     }
     public Worker AddWorker(string fullName, string role)
     {
 
-        var workers = ReadWorkers();
+        var workers = _storage.Read<Worker>(_filePath);
         if (workers.Any(x => x.FullName.ToLower() == fullName.ToLower()))
             throw new Exception("Worker already exists.");
         var worker = new Worker
@@ -39,30 +29,30 @@ public class WorkerService
             Role = role,
         };
         workers.Add(worker);
-        SaveWorkers(workers);
+        _storage.Write(_filePath, workers);
         return worker;
     }
     public List<Worker> GetAllActiveWorkers() =>
-                        ReadWorkers().Where(x => x.IsActive).ToList();
+                        _storage.Read<Worker>(_filePath).Where(x => x.IsActive).ToList();
     public bool DeactivateWorker(Guid id)
     {
-        var workers = ReadWorkers();
+        var workers = _storage.Read<Worker>(_filePath);
         var worker = workers.FirstOrDefault(x => x.Id == id);
         if (worker == null)
             return false;
         worker.IsActive = false;
-        SaveWorkers(workers);
+        _storage.Write(_filePath, workers);
         return true;
     }
 
     public Worker? GetWorkerById(Guid id)
     {
-        var workers = ReadWorkers();
+        var workers = _storage.Read<Worker>(_filePath);
         return workers.FirstOrDefault(x => x.Id == id);
     }
     public List<Worker> DateWorker(DateTime startDate , DateTime endDate)
     {
-        List<Worker> workers = ReadWorkers();
+        List<Worker> workers = _storage.Read<Worker>(_filePath);
         return workers.Where(x => x.CreatedAt >= startDate && x.CreatedAt <= endDate).ToList();
     }
 }
