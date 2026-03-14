@@ -14,7 +14,8 @@ public class WorkerService
         _filePath = Path.Combine(Directory.GetCurrentDirectory(), "Data", "workers.json");
     }
     public List<Worker> GetAllWorkers() => _storage.Read<Worker>(_filePath);
-
+    
+    // Add a new worker
     public Worker AddWorker(string fullName, string role)
     {
 
