@@ -13,10 +13,8 @@ public class WorkerService
         _storage = storage;
         _filePath = Path.Combine(Directory.GetCurrentDirectory(), "Data", "workers.json");
     }
-    public List<Worker> GetAllWorkers()
-    {
-        return _storage.Read<Worker>(_filePath);
-    }
+    public List<Worker> GetAllWorkers() => _storage.Read<Worker>(_filePath);
+
     public Worker AddWorker(string fullName, string role)
     {
 
@@ -50,7 +48,7 @@ public class WorkerService
         var workers = _storage.Read<Worker>(_filePath);
         return workers.FirstOrDefault(x => x.Id == id);
     }
-    public List<Worker> DateWorker(DateTime startDate , DateTime endDate)
+    public List<Worker> DateWorker(DateTime startDate, DateTime endDate)
     {
         List<Worker> workers = _storage.Read<Worker>(_filePath);
         return workers.Where(x => x.CreatedAt >= startDate && x.CreatedAt <= endDate).ToList();
