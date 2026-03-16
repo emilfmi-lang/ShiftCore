@@ -3,7 +3,7 @@ using ShiftCore.Infrastructure;
 using ShiftCore.Services;
 
 var builder = WebApplication.CreateBuilder(args);
-
+// Add services to the container.
 builder.Services.AddOpenApi();
 builder.Services.AddControllers();
 builder.Services.AddSingleton<JsonStorage>();
