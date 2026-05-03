@@ -1,0 +1,100 @@
+2026-05-03 16:08:25.805 +04:00 [INF] Now listening on: http://localhost:5119
+2026-05-03 16:08:25.863 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-03 16:08:25.864 +04:00 [INF] Hosting environment: Development
+2026-05-03 16:08:25.865 +04:00 [INF] Content root path: C:\Users\User\OneDrive\Desktop\ShiftCore\Solution1\ShiftCore
+2026-05-03 16:08:27.683 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5119/scalar/v1 - null null
+2026-05-03 16:08:27.876 +04:00 [INF] Executing endpoint 'HTTP: GET /scalar/{documentName?}'
+2026-05-03 16:08:28.077 +04:00 [INF] Write content with HTTP Response ContentType of text/html
+2026-05-03 16:08:28.099 +04:00 [INF] Executed endpoint 'HTTP: GET /scalar/{documentName?}'
+2026-05-03 16:08:28.103 +04:00 [INF] HTTP GET /scalar/v1 responded 200 in 230.0984 ms
+2026-05-03 16:08:28.113 +04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5119/scalar/v1 - 200 null text/html 433.0441ms
+2026-05-03 16:08:28.365 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5119/scalar/scalar.js - null null
+2026-05-03 16:08:28.368 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5119/scalar/scalar.aspnetcore.js - null null
+2026-05-03 16:08:28.373 +04:00 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.js'
+2026-05-03 16:08:28.375 +04:00 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2026-05-03 16:08:28.383 +04:00 [INF] Sending file with download name ''.
+2026-05-03 16:08:28.383 +04:00 [INF] Sending file with download name ''.
+2026-05-03 16:08:28.391 +04:00 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2026-05-03 16:08:28.391 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5119/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-03 16:08:28.393 +04:00 [INF] HTTP GET /scalar/scalar.aspnetcore.js responded 200 in 17.6514 ms
+2026-05-03 16:08:28.394 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5119/_vs/browserLink - null null
+2026-05-03 16:08:28.398 +04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5119/_framework/aspnetcore-browser-refresh.js - 200 14923 application/javascript; charset=utf-8 6.7052ms
+2026-05-03 16:08:28.399 +04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5119/scalar/scalar.aspnetcore.js - 200 1111 text/javascript 31.8471ms
+2026-05-03 16:08:28.558 +04:00 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.js'
+2026-05-03 16:08:28.563 +04:00 [INF] HTTP GET /scalar/scalar.js responded 200 in 189.8528 ms
+2026-05-03 16:08:28.567 +04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5119/scalar/scalar.js - 200 998407 text/javascript 202.0705ms
+2026-05-03 16:08:28.812 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5119/openapi/v1.json - null null
+2026-05-03 16:08:28.818 +04:00 [INF] Executing endpoint 'HTTP: GET /openapi/{documentName}.json'
+2026-05-03 16:08:28.827 +04:00 [INF] Executed endpoint 'HTTP: GET /openapi/{documentName}.json'
+2026-05-03 16:08:28.829 +04:00 [INF] HTTP GET /openapi/v1.json responded 200 in 10.7998 ms
+2026-05-03 16:08:28.831 +04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5119/openapi/v1.json - 200 null application/json;charset=utf-8 19.5781ms
+2026-05-03 16:08:28.985 +04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5119/_vs/browserLink - 200 null text/javascript; charset=UTF-8 590.8085ms
+2026-05-03 16:08:29.023 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5119/api/Worker - null null
+2026-05-03 16:08:29.024 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5119/api/Attendance/today - null null
+2026-05-03 16:08:29.027 +04:00 [INF] Executing endpoint 'ShiftCore.Controllers.WorkerController.GetAllWorkers (ShiftCore)'
+2026-05-03 16:08:29.031 +04:00 [INF] Executing endpoint 'ShiftCore.Controllers.AttendanceController.GetTodayAttendance (ShiftCore)'
+2026-05-03 16:08:29.079 +04:00 [INF] Route matched with {action = "GetAllWorkers", controller = "Worker"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllWorkers() on controller ShiftCore.Controllers.WorkerController (ShiftCore).
+2026-05-03 16:08:29.080 +04:00 [INF] Route matched with {action = "GetTodayAttendance", controller = "Attendance"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetTodayAttendance() on controller ShiftCore.Controllers.AttendanceController (ShiftCore).
+2026-05-03 16:08:29.116 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ShiftCore.Entity.AttendanceRecord, ShiftCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-03 16:08:29.121 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ShiftCore.Entity.Worker, ShiftCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-03 16:08:29.126 +04:00 [INF] Executed action ShiftCore.Controllers.AttendanceController.GetTodayAttendance (ShiftCore) in 35.5823ms
+2026-05-03 16:08:29.127 +04:00 [INF] Executed action ShiftCore.Controllers.WorkerController.GetAllWorkers (ShiftCore) in 44.4159ms
+2026-05-03 16:08:29.128 +04:00 [INF] Executed endpoint 'ShiftCore.Controllers.AttendanceController.GetTodayAttendance (ShiftCore)'
+2026-05-03 16:08:29.130 +04:00 [INF] Executed endpoint 'ShiftCore.Controllers.WorkerController.GetAllWorkers (ShiftCore)'
+2026-05-03 16:08:29.131 +04:00 [INF] HTTP GET /api/Attendance/today responded 200 in 99.9582 ms
+2026-05-03 16:08:29.133 +04:00 [INF] HTTP GET /api/Worker responded 200 in 105.7746 ms
+2026-05-03 16:08:29.136 +04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5119/api/Attendance/today - 200 null application/json; charset=utf-8 111.223ms
+2026-05-03 16:08:29.138 +04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5119/api/Worker - 200 null application/json; charset=utf-8 115.4899ms
+2026-05-03 16:08:29.361 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5119/scalar/favicon.svg - null null
+2026-05-03 16:08:29.365 +04:00 [INF] Executing endpoint 'HTTP: GET /scalar/favicon.svg'
+2026-05-03 16:08:29.367 +04:00 [INF] Sending file with download name ''.
+2026-05-03 16:08:29.368 +04:00 [INF] Executed endpoint 'HTTP: GET /scalar/favicon.svg'
+2026-05-03 16:08:29.370 +04:00 [INF] HTTP GET /scalar/favicon.svg responded 200 in 5.3193 ms
+2026-05-03 16:08:29.373 +04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5119/scalar/favicon.svg - 200 533 image/svg+xml 12.208ms
+2026-05-03 16:08:45.277 +04:00 [INF] Now listening on: http://localhost:5119
+2026-05-03 16:08:45.333 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-03 16:08:45.334 +04:00 [INF] Hosting environment: Development
+2026-05-03 16:08:45.335 +04:00 [INF] Content root path: C:\Users\User\OneDrive\Desktop\ShiftCore\Solution1\ShiftCore
+2026-05-03 16:08:46.262 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5119/scalar/v1 - null null
+2026-05-03 16:08:46.338 +04:00 [INF] Executing endpoint 'HTTP: GET /scalar/{documentName?}'
+2026-05-03 16:08:46.447 +04:00 [INF] Write content with HTTP Response ContentType of text/html
+2026-05-03 16:08:46.465 +04:00 [INF] Executed endpoint 'HTTP: GET /scalar/{documentName?}'
+2026-05-03 16:08:46.470 +04:00 [INF] HTTP GET /scalar/v1 responded 200 in 132.2687 ms
+2026-05-03 16:08:46.479 +04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5119/scalar/v1 - 200 null text/html 218.1035ms
+2026-05-03 16:08:46.503 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5119/scalar/scalar.js - null null
+2026-05-03 16:08:46.509 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5119/scalar/scalar.aspnetcore.js - null null
+2026-05-03 16:08:46.510 +04:00 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.js'
+2026-05-03 16:08:46.511 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5119/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-03 16:08:46.512 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5119/_vs/browserLink - null null
+2026-05-03 16:08:46.514 +04:00 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2026-05-03 16:08:46.520 +04:00 [INF] Sending file with download name ''.
+2026-05-03 16:08:46.522 +04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5119/_framework/aspnetcore-browser-refresh.js - 200 14923 application/javascript; charset=utf-8 10.7177ms
+2026-05-03 16:08:46.527 +04:00 [INF] Sending file with download name ''.
+2026-05-03 16:08:46.535 +04:00 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2026-05-03 16:08:46.537 +04:00 [INF] HTTP GET /scalar/scalar.aspnetcore.js responded 200 in 22.3551 ms
+2026-05-03 16:08:46.540 +04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5119/scalar/scalar.aspnetcore.js - 200 1111 text/javascript 31.1659ms
+2026-05-03 16:08:46.557 +04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5119/_vs/browserLink - 200 null text/javascript; charset=UTF-8 44.9995ms
+2026-05-03 16:08:46.558 +04:00 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.js'
+2026-05-03 16:08:46.564 +04:00 [INF] HTTP GET /scalar/scalar.js responded 200 in 54.3793 ms
+2026-05-03 16:08:46.568 +04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5119/scalar/scalar.js - 200 998407 text/javascript 65.8978ms
+2026-05-03 16:08:46.875 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5119/openapi/v1.json - null null
+2026-05-03 16:08:46.878 +04:00 [INF] Executing endpoint 'HTTP: GET /openapi/{documentName}.json'
+2026-05-03 16:08:46.885 +04:00 [INF] Executed endpoint 'HTTP: GET /openapi/{documentName}.json'
+2026-05-03 16:08:46.886 +04:00 [INF] HTTP GET /openapi/v1.json responded 200 in 8.6310 ms
+2026-05-03 16:08:46.888 +04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5119/openapi/v1.json - 200 null application/json;charset=utf-8 12.614ms
+2026-05-03 16:10:42.850 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5119/api/Attendance/export - null null
+2026-05-03 16:10:42.854 +04:00 [INF] Executing endpoint 'ShiftCore.Controllers.AttendanceController.Export (ShiftCore)'
+2026-05-03 16:10:42.878 +04:00 [INF] Route matched with {action = "Export", controller = "Attendance"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Export() on controller ShiftCore.Controllers.AttendanceController (ShiftCore).
+2026-05-03 16:10:48.435 +04:00 [INF] Executing FileContentResult, sending file with download name 'Attendance.xlsx' ...
+2026-05-03 16:10:48.447 +04:00 [INF] Executed action ShiftCore.Controllers.AttendanceController.Export (ShiftCore) in 5560.7192ms
+2026-05-03 16:10:48.448 +04:00 [INF] Executed endpoint 'ShiftCore.Controllers.AttendanceController.Export (ShiftCore)'
+2026-05-03 16:10:48.450 +04:00 [INF] HTTP GET /api/Attendance/export responded 200 in 5596.1402 ms
+2026-05-03 16:10:48.453 +04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5119/api/Attendance/export - 200 6861 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 5602.5884ms
+2026-05-03 16:13:49.182 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5119/api/Attendance/export - null null
+2026-05-03 16:13:49.191 +04:00 [INF] Executing endpoint 'ShiftCore.Controllers.AttendanceController.Export (ShiftCore)'
+2026-05-03 16:13:49.193 +04:00 [INF] Route matched with {action = "Export", controller = "Attendance"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Export() on controller ShiftCore.Controllers.AttendanceController (ShiftCore).
+2026-05-03 16:13:49.208 +04:00 [INF] Executing FileContentResult, sending file with download name 'Attendance.xlsx' ...
+2026-05-03 16:13:49.211 +04:00 [INF] Executed action ShiftCore.Controllers.AttendanceController.Export (ShiftCore) in 15.4585ms
+2026-05-03 16:13:49.212 +04:00 [INF] Executed endpoint 'ShiftCore.Controllers.AttendanceController.Export (ShiftCore)'
+2026-05-03 16:13:49.214 +04:00 [INF] HTTP GET /api/Attendance/export responded 200 in 22.9058 ms
+2026-05-03 16:13:49.216 +04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5119/api/Attendance/export - 200 6861 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 34.5323ms
