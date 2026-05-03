@@ -5,5 +5,12 @@
     "IsActive": true,
     "CreatedAt": "2026-03-15T06:36:50.3208541Z",
     "Id": "14f8156c-47e1-4bfc-89ad-5262964e2dcc"
+  },
+  {
+    "FullName": "Yusif Yusifov",
+    "Role": "Sahe reisi",
+    "IsActive": true,
+    "CreatedAt": "2026-05-03T12:21:54.3634724Z",
+    "Id": "c1b26d8b-18dc-4a1b-b108-abfc431b7ca6"
   }
 ]

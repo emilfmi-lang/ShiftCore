@@ -4,18 +4,18 @@ namespace ShiftCore.Infrastructure;
 
 public class JsonStorage
 {
-    public List<T> Read<T>(string path)
+    public async Task<List<T>> Read<T>(string path)
     {
         if(!File.Exists(path))
         {
-            File.WriteAllText(path, "[]");
+            await File.WriteAllTextAsync(path, "[]");
         }
-        var json = File.ReadAllText(path);
+        var json = await File.ReadAllTextAsync(path);
         return JsonSerializer.Deserialize<List<T>>(json) ?? [];
     }
-    public void Write<T>(string path, List<T> data)
+    public async Task Write<T>(string path, List<T> data)
     {
         var json = JsonSerializer.Serialize(data, new JsonSerializerOptions { WriteIndented = true });
-        File.WriteAllText(path, json);
+        await File.WriteAllTextAsync(path, json);
     }
 }

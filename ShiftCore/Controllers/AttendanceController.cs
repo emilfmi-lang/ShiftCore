@@ -22,12 +22,12 @@ public class AttendanceController(AttendanceService service,
         return Ok(records);
     }
     [HttpGet("export")]
-    public IActionResult Export()
+    public async Task<IActionResult> Export()
     {
-        var workers = workerService.GetAllWorkers();
-        var records = service.GetTodayAttendance();
-        var exporter = new ExcelExporter();
-        var file = exporter.ExportDailyAttendance(workers, records);
+        var workers = await workerService.GetAllWorkers();
+        var records = await service.GetTodayAttendance();
+        var excelExporter = new ExcelExporter();
+        var file = excelExporter.ExportDailyAttendance(workers, records);
         return File(file, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "Attendance.xlsx");  
     }
 }

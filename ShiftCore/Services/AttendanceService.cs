@@ -61,9 +61,9 @@ public class AttendanceService
         SaveAttendance(records);
         return "Exit recorded";
     }
-    public List<AttendanceRecord> GetTodayAttendance()
+    public async Task<List<AttendanceRecord>> GetTodayAttendance()
     {
-        var records = ReadAttendance();
+        var records = await Task.Run(ReadAttendance);
         return [.. records.Where(r => r.Date.Date == DateTime.Today)];
 
     }
