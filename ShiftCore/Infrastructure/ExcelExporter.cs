@@ -60,10 +60,14 @@ public class ExcelExporter
 
             if (record != null)
             {
-                worksheet.Cell(row, 5).Value = record.EntryTime?.ToString("HH:mm");
-                worksheet.Cell(row, 6).Value = record.EntryTime != null ? "✓" : ""; 
-                worksheet.Cell(row, 7).Value = record.ExitTime?.ToString("HH:mm");
-                worksheet.Cell(row, 8).Value = record.ExitTime != null ? "✓" : "";
+                // Bazadakı UTC saatını yoxlamaq (əgər varsa) və Azərbaycan(+4) saatına çevirərək Excel-ə yazmaq
+                var entryLocal = record.EntryTime?.AddHours(4);
+                var exitLocal = record.ExitTime?.AddHours(4);
+
+                worksheet.Cell(row, 5).Value = entryLocal?.ToString("HH:mm");
+                worksheet.Cell(row, 6).Value = entryLocal != null ? "✓" : ""; 
+                worksheet.Cell(row, 7).Value = exitLocal?.ToString("HH:mm");
+                worksheet.Cell(row, 8).Value = exitLocal != null ? "✓" : "";
             }
 
             row++;

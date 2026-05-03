@@ -50,5 +50,14 @@ public class WorkerService
         var workers = await  _storage.Read<Worker>(_filePath);
         return workers.Where(x => x.CreatedAt >= startDate && x.CreatedAt <= endDate).ToList();
     }
-    
+    public async Task DeleteWorkerAsync(Guid workerId)
+    {
+        var workers = await _storage.Read<Worker>(_filePath);
+        var workerToDelete = workers.FirstOrDefault(w => w.Id == workerId);
+        if (workerToDelete != null)
+        {
+            workers.Remove(workerToDelete);
+            await _storage.Write(_filePath, workers);
+        }
+    }
 }

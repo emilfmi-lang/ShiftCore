@@ -7,7 +7,7 @@ public class AttendanceService
 {
     private string GetFilePath()
     {
-        var today = DateTime.Today.ToString("yyyy_MM_dd");
+        var today = DateTime.UtcNow.ToString("yyyy_MM_dd");
         return Path.Combine(Directory.GetCurrentDirectory(), "Data", $"attendance_{today}.json");
 
     }
@@ -35,14 +35,14 @@ public class AttendanceService
     {
         var records = ReadAttendance();
         var todayRecord = records.FirstOrDefault(r => r.WorkerId == workerId &&
-                                                 r.Date.Date == DateTime.Today);
+                                                 r.Date.Date == DateTime.UtcNow.Date);
         if (todayRecord == null)
         {
             var record = new AttendanceRecord
             {
                 WorkerId = workerId,
-                Date = DateTime.Today,
-                EntryTime = DateTime.Now
+                Date = DateTime.UtcNow.Date,
+                EntryTime = DateTime.UtcNow
             };
             records.Add(record);
             SaveAttendance(records);
@@ -52,19 +52,19 @@ public class AttendanceService
         {
             return "Exit already recorded";
         }
-        var diff = DateTime.Now - todayRecord.EntryTime; 
+        var diff = DateTime.UtcNow - todayRecord.EntryTime; 
         if (diff.Value.TotalSeconds < 3)
         {
             return "Exit allowed only after 3 hours";
         }
-        todayRecord.ExitTime = DateTime.Now;
+        todayRecord.ExitTime = DateTime.UtcNow;
         SaveAttendance(records);
         return "Exit recorded";
     }
     public async Task<List<AttendanceRecord>> GetTodayAttendance()
     {
         var records = await Task.Run(ReadAttendance);
-        return [.. records.Where(r => r.Date.Date == DateTime.Today)];
+        return [.. records.Where(r => r.Date.Date == DateTime.UtcNow.Date)];
 
     }
 
