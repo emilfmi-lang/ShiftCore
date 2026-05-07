@@ -25,7 +25,7 @@ public class AttendanceController(AttendanceService service,
     public async Task<IActionResult> Export()
     {
         var workers = await workerService.GetAllWorkers();
-        var records = await service.GetTodayAttendance();
+        var records =  service.GetTodayAttendance();
         var excelExporter = new ExcelExporter();
         var file = excelExporter.ExportDailyAttendance(workers, records);
         return File(file, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "Attendance.xlsx");  
