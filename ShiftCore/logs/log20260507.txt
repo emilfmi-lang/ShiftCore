@@ -419,3 +419,120 @@
 2026-05-07 17:39:24.848 +04:00 [INF] Executed endpoint 'HTTP: GET /scalar/favicon.svg'
 2026-05-07 17:39:24.850 +04:00 [INF] HTTP GET /scalar/favicon.svg responded 200 in 4.1851 ms
 2026-05-07 17:39:24.852 +04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5119/scalar/favicon.svg - 200 533 image/svg+xml 10.1418ms
+2026-05-07 17:41:22.131 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5119/api/Worker - null null
+2026-05-07 17:41:22.131 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5119/api/Attendance/today - null null
+2026-05-07 17:41:22.141 +04:00 [INF] CORS policy execution successful.
+2026-05-07 17:41:22.148 +04:00 [INF] CORS policy execution successful.
+2026-05-07 17:41:22.149 +04:00 [INF] Executing endpoint 'ShiftCore.Controllers.WorkerController.GetAllWorkers (ShiftCore)'
+2026-05-07 17:41:22.151 +04:00 [INF] Executing endpoint 'ShiftCore.Controllers.AttendanceController.GetTodayAttendance (ShiftCore)'
+2026-05-07 17:41:22.178 +04:00 [INF] Route matched with {action = "GetTodayAttendance", controller = "Attendance"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetTodayAttendance() on controller ShiftCore.Controllers.AttendanceController (ShiftCore).
+2026-05-07 17:41:22.178 +04:00 [INF] Route matched with {action = "GetAllWorkers", controller = "Worker"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllWorkers() on controller ShiftCore.Controllers.WorkerController (ShiftCore).
+2026-05-07 17:41:22.233 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ShiftCore.Entity.AttendanceRecord, ShiftCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-07 17:41:22.233 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ShiftCore.Entity.Worker, ShiftCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-07 17:41:22.252 +04:00 [INF] Executed action ShiftCore.Controllers.AttendanceController.GetTodayAttendance (ShiftCore) in 63.8306ms
+2026-05-07 17:41:22.252 +04:00 [INF] Executed action ShiftCore.Controllers.WorkerController.GetAllWorkers (ShiftCore) in 58.3975ms
+2026-05-07 17:41:22.257 +04:00 [INF] Executed endpoint 'ShiftCore.Controllers.AttendanceController.GetTodayAttendance (ShiftCore)'
+2026-05-07 17:41:22.261 +04:00 [INF] Executed endpoint 'ShiftCore.Controllers.WorkerController.GetAllWorkers (ShiftCore)'
+2026-05-07 17:41:22.263 +04:00 [INF] HTTP GET /api/Attendance/today responded 200 in 115.2134 ms
+2026-05-07 17:41:22.266 +04:00 [INF] HTTP GET /api/Worker responded 200 in 125.6281 ms
+2026-05-07 17:41:22.271 +04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5119/api/Attendance/today - 200 null application/json; charset=utf-8 139.8533ms
+2026-05-07 17:41:22.276 +04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5119/api/Worker - 200 null application/json; charset=utf-8 145.2037ms
+2026-05-07 17:41:26.602 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5119/api/Attendance/today - null null
+2026-05-07 17:41:26.602 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5119/api/Worker - null null
+2026-05-07 17:41:26.611 +04:00 [INF] CORS policy execution successful.
+2026-05-07 17:41:26.617 +04:00 [INF] CORS policy execution successful.
+2026-05-07 17:41:26.619 +04:00 [INF] Executing endpoint 'ShiftCore.Controllers.AttendanceController.GetTodayAttendance (ShiftCore)'
+2026-05-07 17:41:26.621 +04:00 [INF] Executing endpoint 'ShiftCore.Controllers.WorkerController.GetAllWorkers (ShiftCore)'
+2026-05-07 17:41:26.624 +04:00 [INF] Route matched with {action = "GetTodayAttendance", controller = "Attendance"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetTodayAttendance() on controller ShiftCore.Controllers.AttendanceController (ShiftCore).
+2026-05-07 17:41:26.627 +04:00 [INF] Route matched with {action = "GetAllWorkers", controller = "Worker"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllWorkers() on controller ShiftCore.Controllers.WorkerController (ShiftCore).
+2026-05-07 17:41:26.633 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ShiftCore.Entity.AttendanceRecord, ShiftCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-07 17:41:26.638 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ShiftCore.Entity.Worker, ShiftCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-07 17:41:26.642 +04:00 [INF] Executed action ShiftCore.Controllers.AttendanceController.GetTodayAttendance (ShiftCore) in 9.9097ms
+2026-05-07 17:41:26.646 +04:00 [INF] Executed action ShiftCore.Controllers.WorkerController.GetAllWorkers (ShiftCore) in 9.0601ms
+2026-05-07 17:41:26.650 +04:00 [INF] Executed endpoint 'ShiftCore.Controllers.AttendanceController.GetTodayAttendance (ShiftCore)'
+2026-05-07 17:41:26.653 +04:00 [INF] Executed endpoint 'ShiftCore.Controllers.WorkerController.GetAllWorkers (ShiftCore)'
+2026-05-07 17:41:26.656 +04:00 [INF] HTTP GET /api/Attendance/today responded 200 in 44.6669 ms
+2026-05-07 17:41:26.659 +04:00 [INF] HTTP GET /api/Worker responded 200 in 42.5736 ms
+2026-05-07 17:41:26.665 +04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5119/api/Attendance/today - 200 null application/json; charset=utf-8 62.4502ms
+2026-05-07 17:41:26.670 +04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5119/api/Worker - 200 null application/json; charset=utf-8 67.2883ms
+2026-05-07 17:41:27.834 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5119/api/Worker - null null
+2026-05-07 17:41:27.835 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5119/api/Attendance/today - null null
+2026-05-07 17:41:27.840 +04:00 [INF] CORS policy execution successful.
+2026-05-07 17:41:27.846 +04:00 [INF] CORS policy execution successful.
+2026-05-07 17:41:27.847 +04:00 [INF] Executing endpoint 'ShiftCore.Controllers.WorkerController.GetAllWorkers (ShiftCore)'
+2026-05-07 17:41:27.849 +04:00 [INF] Executing endpoint 'ShiftCore.Controllers.AttendanceController.GetTodayAttendance (ShiftCore)'
+2026-05-07 17:41:27.851 +04:00 [INF] Route matched with {action = "GetAllWorkers", controller = "Worker"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllWorkers() on controller ShiftCore.Controllers.WorkerController (ShiftCore).
+2026-05-07 17:41:27.854 +04:00 [INF] Route matched with {action = "GetTodayAttendance", controller = "Attendance"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetTodayAttendance() on controller ShiftCore.Controllers.AttendanceController (ShiftCore).
+2026-05-07 17:41:27.860 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ShiftCore.Entity.Worker, ShiftCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-07 17:41:27.863 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ShiftCore.Entity.AttendanceRecord, ShiftCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-05-07 17:41:27.865 +04:00 [INF] Executed action ShiftCore.Controllers.WorkerController.GetAllWorkers (ShiftCore) in 7.0299ms
+2026-05-07 17:41:27.869 +04:00 [INF] Executed action ShiftCore.Controllers.AttendanceController.GetTodayAttendance (ShiftCore) in 6.6119ms
+2026-05-07 17:41:27.873 +04:00 [INF] Executed endpoint 'ShiftCore.Controllers.WorkerController.GetAllWorkers (ShiftCore)'
+2026-05-07 17:41:27.878 +04:00 [INF] Executed endpoint 'ShiftCore.Controllers.AttendanceController.GetTodayAttendance (ShiftCore)'
+2026-05-07 17:41:27.882 +04:00 [INF] HTTP GET /api/Worker responded 200 in 41.2587 ms
+2026-05-07 17:41:27.884 +04:00 [INF] HTTP GET /api/Attendance/today responded 200 in 38.6661 ms
+2026-05-07 17:41:27.890 +04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5119/api/Worker - 200 null application/json; charset=utf-8 55.3989ms
+2026-05-07 17:41:27.894 +04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5119/api/Attendance/today - 200 null application/json; charset=utf-8 59.7508ms
+2026-05-07 17:41:30.935 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5119/api/Attendance/export - null null
+2026-05-07 17:41:30.950 +04:00 [INF] Executing endpoint 'ShiftCore.Controllers.AttendanceController.Export (ShiftCore)'
+2026-05-07 17:41:30.964 +04:00 [INF] Route matched with {action = "Export", controller = "Attendance"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Export() on controller ShiftCore.Controllers.AttendanceController (ShiftCore).
+2026-05-07 17:41:37.740 +04:00 [INF] Executing FileContentResult, sending file with download name 'Attendance.xlsx' ...
+2026-05-07 17:41:37.748 +04:00 [INF] Executed action ShiftCore.Controllers.AttendanceController.Export (ShiftCore) in 6776.7977ms
+2026-05-07 17:41:37.751 +04:00 [INF] Executed endpoint 'ShiftCore.Controllers.AttendanceController.Export (ShiftCore)'
+2026-05-07 17:41:37.753 +04:00 [INF] HTTP GET /api/Attendance/export responded 200 in 6802.6992 ms
+2026-05-07 17:41:37.757 +04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5119/api/Attendance/export - 200 6929 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 6821.485ms
+2026-05-07 17:45:13.547 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5119/api/Worker/export - null null
+2026-05-07 17:45:13.557 +04:00 [INF] Executing endpoint 'ShiftCore.Controllers.WorkerController.Export (ShiftCore)'
+2026-05-07 17:45:13.574 +04:00 [INF] Route matched with {action = "Export", controller = "Worker"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Export() on controller ShiftCore.Controllers.WorkerController (ShiftCore).
+2026-05-07 17:45:13.596 +04:00 [INF] Executing FileContentResult, sending file with download name 'Workers.xlsx' ...
+2026-05-07 17:45:13.600 +04:00 [INF] Executed action ShiftCore.Controllers.WorkerController.Export (ShiftCore) in 21.8041ms
+2026-05-07 17:45:13.602 +04:00 [INF] Executed endpoint 'ShiftCore.Controllers.WorkerController.Export (ShiftCore)'
+2026-05-07 17:45:13.605 +04:00 [INF] HTTP GET /api/Worker/export responded 200 in 47.2692 ms
+2026-05-07 17:45:13.609 +04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5119/api/Worker/export - 200 6565 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 61.8615ms
+2026-05-07 17:45:38.362 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5119/api/Worker/export - null null
+2026-05-07 17:45:38.372 +04:00 [INF] Executing endpoint 'ShiftCore.Controllers.WorkerController.Export (ShiftCore)'
+2026-05-07 17:45:38.375 +04:00 [INF] Route matched with {action = "Export", controller = "Worker"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Export() on controller ShiftCore.Controllers.WorkerController (ShiftCore).
+2026-05-07 17:45:38.388 +04:00 [INF] Executing FileContentResult, sending file with download name 'Workers.xlsx' ...
+2026-05-07 17:45:38.392 +04:00 [INF] Executed action ShiftCore.Controllers.WorkerController.Export (ShiftCore) in 13.7421ms
+2026-05-07 17:45:38.396 +04:00 [INF] Executed endpoint 'ShiftCore.Controllers.WorkerController.Export (ShiftCore)'
+2026-05-07 17:45:38.398 +04:00 [INF] HTTP GET /api/Worker/export responded 200 in 26.1227 ms
+2026-05-07 17:45:38.403 +04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5119/api/Worker/export - 200 6565 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet 40.6231ms
+2026-05-07 17:49:14.311 +04:00 [INF] Now listening on: http://localhost:5119
+2026-05-07 17:49:14.411 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-07 17:49:14.414 +04:00 [INF] Hosting environment: Development
+2026-05-07 17:49:14.417 +04:00 [INF] Content root path: C:\Users\User\OneDrive\Desktop\ShiftCore\Solution1\ShiftCore
+2026-05-07 17:49:14.685 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5119/scalar/v1 - null null
+2026-05-07 17:49:14.812 +04:00 [INF] Executing endpoint 'HTTP: GET /scalar/{documentName?}'
+2026-05-07 17:49:14.995 +04:00 [INF] Write content with HTTP Response ContentType of text/html
+2026-05-07 17:49:15.016 +04:00 [INF] Executed endpoint 'HTTP: GET /scalar/{documentName?}'
+2026-05-07 17:49:15.023 +04:00 [INF] HTTP GET /scalar/v1 responded 200 in 213.5630 ms
+2026-05-07 17:49:15.034 +04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5119/scalar/v1 - 200 null text/html 351.5655ms
+2026-05-07 17:49:15.043 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5119/scalar/scalar.aspnetcore.js - null null
+2026-05-07 17:49:15.044 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5119/_framework/aspnetcore-browser-refresh.js - null null
+2026-05-07 17:49:15.045 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5119/scalar/scalar.js - null null
+2026-05-07 17:49:15.057 +04:00 [INF] CORS policy execution failed.
+2026-05-07 17:49:15.059 +04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5119/_framework/aspnetcore-browser-refresh.js - 200 14923 application/javascript; charset=utf-8 15.3306ms
+2026-05-07 17:49:15.067 +04:00 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.js'
+2026-05-07 17:49:15.069 +04:00 [INF] Request origin http://localhost:5119 does not have permission to access the resource.
+2026-05-07 17:49:15.077 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5119/_vs/browserLink - null null
+2026-05-07 17:49:15.083 +04:00 [INF] Executing endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2026-05-07 17:49:15.084 +04:00 [INF] Sending file with download name ''.
+2026-05-07 17:49:15.091 +04:00 [INF] Sending file with download name ''.
+2026-05-07 17:49:15.098 +04:00 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.aspnetcore.js'
+2026-05-07 17:49:15.102 +04:00 [INF] HTTP GET /scalar/scalar.aspnetcore.js responded 200 in 47.6235 ms
+2026-05-07 17:49:15.107 +04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5119/scalar/scalar.aspnetcore.js - 200 1111 text/javascript 64.9668ms
+2026-05-07 17:49:15.123 +04:00 [INF] Executed endpoint 'HTTP: GET /scalar/scalar.js'
+2026-05-07 17:49:15.128 +04:00 [INF] HTTP GET /scalar/scalar.js responded 200 in 61.7040 ms
+2026-05-07 17:49:15.129 +04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5119/_vs/browserLink - 200 null text/javascript; charset=UTF-8 52.0138ms
+2026-05-07 17:49:15.134 +04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5119/scalar/scalar.js - 200 998407 text/javascript 89.4229ms
+2026-05-07 17:49:15.814 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5119/openapi/v1.json - null null
+2026-05-07 17:49:15.821 +04:00 [INF] Executing endpoint 'HTTP: GET /openapi/{documentName}.json'
+2026-05-07 17:49:15.835 +04:00 [INF] Executed endpoint 'HTTP: GET /openapi/{documentName}.json'
+2026-05-07 17:49:15.838 +04:00 [INF] HTTP GET /openapi/v1.json responded 200 in 16.5762 ms
+2026-05-07 17:49:15.843 +04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5119/openapi/v1.json - 200 null application/json;charset=utf-8 29.3954ms
+2026-05-07 17:49:16.347 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5119/scalar/favicon.svg - null null
+2026-05-07 17:49:16.353 +04:00 [INF] Executing endpoint 'HTTP: GET /scalar/favicon.svg'
+2026-05-07 17:49:16.355 +04:00 [INF] Sending file with download name ''.
+2026-05-07 17:49:16.358 +04:00 [INF] Executed endpoint 'HTTP: GET /scalar/favicon.svg'
+2026-05-07 17:49:16.361 +04:00 [INF] HTTP GET /scalar/favicon.svg responded 200 in 7.8973 ms
+2026-05-07 17:49:16.365 +04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5119/scalar/favicon.svg - 200 533 image/svg+xml 18.695ms
