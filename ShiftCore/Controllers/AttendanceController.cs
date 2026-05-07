@@ -13,7 +13,13 @@ public class AttendanceController(AttendanceService service,
     public IActionResult RegisterAttendance(Guid workerId)
     {
         var result = service.RegisterAttendance(workerId);
-        return Ok(result);
+
+        if (result.Contains("allowed only after") || result.Contains("already recorded"))
+        {
+            return BadRequest(new { message = result });
+        }
+
+        return Ok(new { message = result }); 
     }
     [HttpGet("today")]
     public IActionResult GetTodayAttendance()

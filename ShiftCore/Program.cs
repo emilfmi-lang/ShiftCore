@@ -14,6 +14,19 @@ Log.Logger = new LoggerConfiguration()
 builder.Host.UseSerilog();
 builder.Services.AddOpenApi();
 builder.Services.AddControllers();
+
+// YENI: CORS Icazesi (React - 8080 ucun)
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowReactApp",
+        policy =>
+        {
+            policy.WithOrigins("http://localhost:8080") // Senin Frontend portun
+                  .AllowAnyHeader()
+                  .AllowAnyMethod();
+        });
+});
+
 builder.Services.AddSingleton<JsonStorage>();
 builder.Services.AddSingleton<WorkerService>();
 builder.Services.AddSingleton<AttendanceService>();
@@ -29,6 +42,10 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseSerilogRequestLogging();
+
+// YENI: CORS middleware (Router-dan evvel ishlemelidir)
+app.UseCors("AllowReactApp");
+
 app.UseAuthorization();
 app.MapControllers();
 
