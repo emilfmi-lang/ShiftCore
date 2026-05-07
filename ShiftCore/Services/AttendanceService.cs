@@ -1,4 +1,5 @@
 ﻿using ShiftCore.Entity;
+using ShiftCore.Models;
 
 namespace ShiftCore.Services;
 
@@ -29,7 +30,7 @@ public class AttendanceService
         });
         File.WriteAllText(path, json);
     }
-    public string RegisterAttendance(Guid workerId)
+    public ResponseModel<string> RegisterAttendance(Guid workerId)
     {
         var records = ReadAttendance();
         var todayRecord = records.FirstOrDefault(r => r.WorkerId == workerId &&
@@ -44,20 +45,20 @@ public class AttendanceService
             };
             records.Add(record);
             SaveAttendance(records);
-            return "Entry recorded";
+            return ResponseModel<string>.Success("Entry recorded");
         }
         if (todayRecord.ExitTime != null)
         {
-            return "Exit already recorded";
+            return ResponseModel<string>.Failure("Exit already recorded");
         }
         var diff = DateTime.UtcNow - todayRecord.EntryTime;
         if (diff.Value.TotalSeconds < 3)
         {
-            return "Exit allowed only after 3 hours";
+            return ResponseModel<string>.Failure("Exit allowed only after 3 hours");
         }
         todayRecord.ExitTime = DateTime.UtcNow;
         SaveAttendance(records);
-        return "Exit recorded";
+        return ResponseModel<string>.Success("Exit recorded");
     }
     public List<AttendanceRecord> GetTodayAttendance()
     {

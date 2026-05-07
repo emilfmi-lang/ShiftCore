@@ -12,14 +12,12 @@ public class AttendanceController(AttendanceService service,
     [HttpPost("{workerId}")]
     public IActionResult RegisterAttendance(Guid workerId)
     {
-        var result = service.RegisterAttendance(workerId);
-
-        if (result.Contains("allowed only after") || result.Contains("already recorded"))
+        var response = service.RegisterAttendance(workerId);
+        if (response.IsSuccess)
         {
-            return BadRequest(new { message = result });
-        }
-
-        return Ok(new { message = result }); 
+            return Ok(response);
+        } 
+        return BadRequest(response);
     }
     [HttpGet("today")]
     public IActionResult GetTodayAttendance()

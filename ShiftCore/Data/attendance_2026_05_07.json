@@ -3,7 +3,14 @@
     "WorkerId": "14f8156c-47e1-4bfc-89ad-5262964e2dcc",
     "Date": "2026-05-07T00:00:00Z",
     "EntryTime": "2026-05-07T12:31:51.5818841Z",
-    "ExitTime": null,
+    "ExitTime": "2026-05-07T13:38:26.4134265Z",
     "Id": "9e1249cf-2019-4587-a98d-72a84f77f6a3"
+  },
+  {
+    "WorkerId": "c1b26d8b-18dc-4a1b-b108-abfc431b7ca6",
+    "Date": "2026-05-07T00:00:00Z",
+    "EntryTime": "2026-05-07T13:38:31.8172828Z",
+    "ExitTime": "2026-05-07T13:38:36.8626485Z",
+    "Id": "4dd0e8ba-0df3-4f25-9ccf-7b5f72cdb715"
   }
 ]
