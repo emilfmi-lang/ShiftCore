@@ -1,5 +1,5 @@
 ﻿using ClosedXML.Excel;
-using ShiftCore.Entity;
+
 
 namespace ShiftCore.Infrastructure;
 
@@ -60,7 +60,6 @@ public class ExcelExporter
 
             if (record != null)
             {
-                // Bazadakı UTC saatını yoxlamaq (əgər varsa) və Azərbaycan(+4) saatına çevirərək Excel-ə yazmaq
                 var entryLocal = record.EntryTime?.AddHours(4);
                 var exitLocal = record.ExitTime?.AddHours(4);
 
