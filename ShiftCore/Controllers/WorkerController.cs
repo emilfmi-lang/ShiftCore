@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using ShiftCore.Dtos;
 using ShiftCore.Infrastructure;
 using ShiftCore.Services;
 
 namespace ShiftCore.Controllers;
 
+[Authorize]
 [Route("api/[controller]")]
 [ApiController]
 public class WorkerController(WorkerService service, ExcelExporter excelExporter) : ControllerBase
