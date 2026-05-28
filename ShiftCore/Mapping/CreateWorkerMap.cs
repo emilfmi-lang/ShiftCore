@@ -1,6 +1,4 @@
 ﻿using ShiftCore.Dtos;
-using ShiftCore.Entity;
-using System.Runtime.CompilerServices;
 
 namespace ShiftCore.Mapping;
 
