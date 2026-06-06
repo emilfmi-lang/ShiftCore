@@ -8,4 +8,5 @@ public class AttendanceRecord : BaseEntity
     public DateTime Date { get; set; }
     public DateTime? EntryTime { get; set; }
     public DateTime? ExitTime { get; set; }
+    public double? TotalWorkedHours { get; set; }
 }

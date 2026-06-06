@@ -51,6 +51,7 @@ public class AttendanceService
         {
             return ResponseModel<string>.Failure("Exit already recorded");
         }
+
         var diff = DateTime.UtcNow - todayRecord.EntryTime;
         if (diff.Value.TotalSeconds < 3)
         {

@@ -12,7 +12,9 @@ public static class CreateWorkerMap
             FullName = dto.FullName,
             Role = dto.Role,
             IsActive = true,
-            CreatedAt = DateTime.UtcNow
+            CreatedAt = DateTime.UtcNow,
+            BaseSalary = dto.BaseSalary,
+            MonthlyNormativeHours = dto.MonthlyNormativeHours
         };
     }
 }

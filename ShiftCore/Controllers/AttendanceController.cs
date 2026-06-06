@@ -1,8 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using ShiftCore.Infrastructure;
-using ShiftCore.Services;
-
-namespace ShiftCore.Controllers;
+﻿namespace ShiftCore.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
