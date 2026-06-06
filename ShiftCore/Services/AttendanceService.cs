@@ -58,6 +58,8 @@ public class AttendanceService
             return ResponseModel<string>.Failure("Exit allowed only after 3 hours");
         }
         todayRecord.ExitTime = DateTime.UtcNow;
+        var workDDiff = todayRecord.ExitTime.Value - todayRecord.EntryTime.Value;
+        todayRecord.TotalWorkedHours = Math.Round(workDDiff.TotalHours, 1);
         SaveAttendance(records);
         return ResponseModel<string>.Success("Exit recorded");
     }
@@ -65,7 +67,6 @@ public class AttendanceService
     {
         var records = ReadAttendance();
         return [.. records.Where(r => r.Date.Date == DateTime.UtcNow.Date)];
-
     }
-
+    public listAr
 }
