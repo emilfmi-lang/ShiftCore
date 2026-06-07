@@ -82,39 +82,126 @@ public class ExcelExporter
                 return stream.ToArray();
             }
 
-            public byte[] ExportWorkers(List<Worker> workers)
-            {
-                using var workbook = new XLWorkbook();
-                var worksheet = workbook.Worksheets.Add("Workers");
-
-                worksheet.Cell(1, 1).Value = "S/s";
-                worksheet.Cell(1, 2).Value = "Ad, soyad";
-                worksheet.Cell(1, 3).Value = "Vəzifə";
-                worksheet.Cell(1, 4).Value = "Status";
-                worksheet.Cell(1, 5).Value = "Yaradılma tarixi";
-
-                int row = 2;
-                int index = 1;
-
-                foreach (var worker in workers)
+                public byte[] ExportMonthlySalaryReport(List<Worker> workers, List<AttendanceRecord> monthlyRecords, int year, int month)
                 {
-                    worksheet.Cell(row, 1).Value = index;
-                    worksheet.Cell(row, 2).Value = worker.FullName;
-                    worksheet.Cell(row, 3).Value = worker.Role;
-                    worksheet.Cell(row, 4).Value = worker.IsActive ? "Aktiv" : "Deaktiv";
-                    worksheet.Cell(row, 5).Value = worker.CreatedAt.ToString("dd.MM.yyyy HH:mm");
+                    using var workbook = new XLWorkbook();
+                    var worksheet = workbook.Worksheets.Add("Salary Report");
 
-                    row++;
-                    index++;
+                    int daysInMonth = DateTime.DaysInMonth(year, month);
+
+                    // --- 1. BAŞLIQLAR (HEADERS) ---
+                    worksheet.Cell(1, 1).Value = "S/s";
+                    worksheet.Cell(1, 2).Value = "Ad, Soyad";
+                    worksheet.Cell(1, 3).Value = "Vəzifə";
+                    worksheet.Cell(1, 4).Value = "Maaş (AZN)";
+                    worksheet.Cell(1, 5).Value = "Normativ Saat";
+
+                    // Ayın günlərini (1, 2, 3...) yan-yana başlıq olaraq yazır
+                    for (int i = 1; i <= daysInMonth; i++)
+                    {
+                        worksheet.Cell(1, 5 + i).Value = $"{i}";
+                    }
+
+                    worksheet.Cell(1, 6 + daysInMonth).Value = "Cəmi Saat";
+                    worksheet.Cell(1, 7 + daysInMonth).Value = "Məbləğ (Yekun)";
+
+                    var headerRange = worksheet.Range(1, 1, 1, 7 + daysInMonth);
+                    headerRange.Style.Font.Bold = true;
+                    headerRange.Style.Fill.BackgroundColor = XLColor.LightGray;
+                    headerRange.Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
+
+                    // --- 2. İŞÇİLƏR VƏ DATA (DOLDURMA) ---
+                    int row = 2;
+                    int s_s = 1;
+
+                    foreach (var worker in workers)
+                    {
+                        worksheet.Cell(row, 1).Value = s_s++;
+                        worksheet.Cell(row, 2).Value = worker.FullName;
+                        worksheet.Cell(row, 3).Value = worker.Role;
+                        worksheet.Cell(row, 4).Value = worker.BaseSalary;
+                        worksheet.Cell(row, 5).Value = worker.MonthlyNormativeHours;
+
+                        // Fəhlənin həmin ayki BÜTÜN qeydlərini tapırıq
+                        var workerRecords = monthlyRecords.Where(r => r.WorkerId == worker.Id).ToList();
+
+                        for (int day = 1; day <= daysInMonth; day++)
+                        {
+                            var recordOfTheDay = workerRecords.FirstOrDefault(r => r.Date.Day == day);
+                            var cell = worksheet.Cell(row, 5 + day);
+
+                            if (recordOfTheDay != null && recordOfTheDay.TotalWorkedHours.HasValue)
+                            {
+                                cell.Value = recordOfTheDay.TotalWorkedHours.Value;
+                            }
+                            else
+                            {
+                                cell.Value = 0; // İşə gəlmədiyi (yaxud saat fərqi olmadığı) gün
+                            }
+                            cell.Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
+                        }
+
+                        // EXCEL DÜSTURLARI
+                        string startCol = worksheet.Cell(row, 6).Address.ColumnLetter;
+                        string endCol = worksheet.Cell(row, 5 + daysInMonth).Address.ColumnLetter;
+
+                        // Cəmi İşlənmiş Saat: =SUM(F2:AJ2) (Dinamik olaraq hərfləri hesablayır)
+                        var sumCell = worksheet.Cell(row, 6 + daysInMonth);
+                        sumCell.FormulaA1 = $"SUM({startCol}{row}:{endCol}{row})";
+                        sumCell.Style.Font.Bold = true;
+
+                        // Yekun Məbləğ: =(Cəmi Saat * (Maaş / Normativ Saat))
+                        string sumAddress = sumCell.Address.ToString();
+                        var totalCell = worksheet.Cell(row, 7 + daysInMonth);
+                        totalCell.FormulaA1 = $"IF(E{row}>0, ROUND({sumAddress}*(D{row}/E{row}), 2), 0)";
+                        totalCell.Style.Font.Bold = true;
+                        totalCell.Style.Font.FontColor = XLColor.Green;
+
+                        row++;
+                    }
+
+                    worksheet.Columns().AdjustToContents();
+
+                    using var stream = new MemoryStream();
+                    workbook.SaveAs(stream);
+
+                    return stream.ToArray();
                 }
 
-                worksheet.Columns().AdjustToContents();
+                public byte[] ExportWorkers(List<Worker> workers)
+                {
+                    using var workbook = new XLWorkbook();
+                    var worksheet = workbook.Worksheets.Add("Workers");
 
-                using var stream = new MemoryStream();
-                workbook.SaveAs(stream);
+                    worksheet.Cell(1, 1).Value = "S/s";
+                    worksheet.Cell(1, 2).Value = "Ad, soyad";
+                    worksheet.Cell(1, 3).Value = "Vəzifə";
+                    worksheet.Cell(1, 4).Value = "Status";
+                    worksheet.Cell(1, 5).Value = "Yaradılma tarixi";
 
-                return stream.ToArray();
+                    int row = 2;
+                    int index = 1;
+
+                    foreach (var worker in workers)
+                    {
+                        worksheet.Cell(row, 1).Value = index;
+                        worksheet.Cell(row, 2).Value = worker.FullName;
+                        worksheet.Cell(row, 3).Value = worker.Role;
+                        worksheet.Cell(row, 4).Value = worker.IsActive ? "Aktiv" : "Deaktiv";
+                        worksheet.Cell(row, 5).Value = worker.CreatedAt.ToString("dd.MM.yyyy HH:mm");
+
+                        row++;
+                        index++;
+                    }
+
+                    worksheet.Columns().AdjustToContents();
+
+                    using var stream = new MemoryStream();
+                    workbook.SaveAs(stream);
+
+                    return stream.ToArray();
+                }
             }
-        }
+
 
 

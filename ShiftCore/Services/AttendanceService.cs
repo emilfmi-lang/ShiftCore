@@ -1,5 +1,4 @@
-﻿using ShiftCore.Entity;
-using ShiftCore.Models;
+﻿using ShiftCore.Models;
 
 namespace ShiftCore.Services;
 
@@ -68,5 +67,22 @@ public class AttendanceService
         var records = ReadAttendance();
         return [.. records.Where(r => r.Date.Date == DateTime.UtcNow.Date)];
     }
-    public listAr
+    public List<AttendanceRecord> GetMonthlyAttendance(int year, int month)
+    {
+        var allMonthlyRecords = new List<AttendanceRecord>();
+        var dataFolder = Path.Combine(Directory.GetCurrentDirectory(), "Data");
+        var searchPattern = $"attendance_{year}_{month:D2}_*.json";
+        var files = Directory.GetFiles(dataFolder, searchPattern);
+        foreach (var file in files)
+        {
+            string jsonString = File.ReadAllText(file);
+            var records = JsonSerializer.Deserialize<List<AttendanceRecord>>(jsonString);
+            if (records != null)
+            {
+                allMonthlyRecords.AddRange(records);
+            }
+
+        }
+        return allMonthlyRecords;
+    }
 }
